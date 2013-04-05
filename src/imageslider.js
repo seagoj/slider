@@ -26,7 +26,7 @@
                 }, duration);
                 break;
             case 'fade-into':
-                this.initializeFadeInto();
+                this.initFadeInto();
 
                 var intervalID = setInterval(function() {
                     count = $container.slideshowFadeInto(intervalID, count);
@@ -66,7 +66,7 @@
         return {"active":$active,"next":$next};
     }
 
-    $.fn.initializeFadeInto = function(start) {
+    $.fn.initFadeInto = function(start) {
         start = typeof start !== 'undefined' ? start : 999
 
         // Adds #active to first element in 'this'
