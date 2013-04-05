@@ -73,14 +73,16 @@
         this.children(":first").addClass('active');
 
         /* Iterates through all children of 'this'
-         *     adds .child-N class to each item
          *     sets initiale z-index (start - order in 'this')
+         *     sets position: absolute
          *     shows child
          */
         for(var i=1; i<=this.children().length; i=i+1) {
             this.find(":nth-child("+i+")")
-/*            .addClass('child-'+i) */
-            .css({'z-index':start-i})
+            .css({
+                'z-index':start-i,
+                'position':'absolute'
+            })
             .show();
         }
     }
