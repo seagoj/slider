@@ -22,31 +22,31 @@
 #colors-slideshow
 {
     float: left;
-    margin-bottom: 15px;
+/*    margin-bottom: 15px;*/
 }
 
 #colors-slideshow img
 {
     position: absolute;
-    margin-top:1%;
+/*    margin-top:1%; */
 }
 
 #colors-text 
 {
     margin-left: 310px;
-    margin-bottom: 20px;
+/*    margin-bottom: 20px;*/
 }
 
 #colors-text h1
 {
-    color: black;    
+/*    color: black;    
     font-size: 20pt;
-    margin-top: 30px;
+    margin-top: 30px;*/
 }
 
 #colors-text p
 {
-    font-size: 8pt;
+/*    font-size: 8pt;
     margin-top: 10px;
-    margin-bottom: 10px;
+    margin-bottom: 10px;*/
 }
