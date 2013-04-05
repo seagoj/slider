@@ -1,4 +1,14 @@
 (function($) {
+
+    /** 
+     * .slideshow
+     * 
+     * Begins the slideshow by choosing the type of slide and duration
+     * 
+     * type        Type of slideshow to run; Defaults to 'fade'
+     * duration    Time in miliseconds that each element is visible; Defaults to
+     *                 5000
+     */
     $.fn.slideshow = function(type, duration) {
         type = typeof type !== 'undefined' ? type : 'fade';
         duration = typeof duration !== 'undefined' ? duration : 5000;
@@ -16,7 +26,7 @@
                 }, duration);
                 break;
             case 'fade-into':
-                this.orderDeck();
+                this.initializeFadeInto();
 
                 var intervalID = setInterval(function() {
                     count = $container.slideshowFadeInto(intervalID, count);
@@ -56,9 +66,20 @@
         return {"active":$active,"next":$next};
     }
 
-    $.fn.orderDeck = function(start) {
+    $.fn.initializeFadeInto = function(start) {
         start = typeof start !== 'undefined' ? start : 999
-        this.children(":first").addClass('active').show();
+
+
+        /* this.children(":first").addClass('active').show();*/
+
+        // Adds #active to first element in 'this'
+        this.children(":first").addClass('active');
+
+        /* Iterates through all children of 'this'
+         *     adds .child-N class to each item
+         *     sets initiale z-index (start - order in 'this')
+         *     shows child
+         */
         for(var i=1; i<=this.children().length; i=i+1) {
             this.find(":nth-child("+i+")")
             .addClass('child-'+i)
