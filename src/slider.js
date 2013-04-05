@@ -15,7 +15,7 @@
 
         var $container = this;
         var count = 0;
-        var validTypes = ['Fade','FadeInto'];
+        var validTypes = ['Fade','FadeInto','FadeIntoForever'];
 
         if(validTypes.indexOf(type) !== -1) {
             this["init"+type]();
@@ -29,22 +29,77 @@
         }
     };
 
+    /**
+     * Sets the initial state for the FadeInto slideshow
+     *
+     * start    z-index for top-most element in slideshow; Defaults to 100
+     */
+    $.fn.initFadeIntoForever = function(start) {
+        start = typeof start !== 'undefined' ? start : 100
+
+        // Adds .active to first element in 'this'
+        this.children(":first").addClass('active');
+
+        // Iterates through all children of 'this'
+        //     sets initiale z-index (start - order in 'this')
+        //     sets position: absolute
+        //     shows child
+        for(var i=1; i<=this.children().length; i=i+1) {
+            this.find(":nth-child("+i+")")
+            .css({
+                'z-index':start-i,
+                'position':'absolute'
+            })
+            .show();
+        }
+    };
+
+    $.fn.slideFadeIntoForever = function (intervalID, count, fadeSpeed) {
+        // if(count == 6) clearInterval(intervalID);
+        // if(count !== 0 && count%7 == 0 ) this.reset();
+
+        fadeSpeed = typeof fadeSpeed !== 'undefined' ? fadeSpeed : 'slow';
+        var $swap = this.swapForever();
+        var $container = this;
+
+        $swap["active"].fadeOut(fadeSpeed, function() {
+            $swap["active"].hide(function() {
+               $swap["next"].addClass('active');
+               var nextZ = $container.nextZ();
+               $swap["active"].css({'z-index':nextZ}).show();
+            });
+        });
+
+        return count+1;
+    };
+
+    $.fn.swapForver = function () {
+        var $active = this.children(".active").toggleClass('active');
+/*        if($active.length == 0) {
+            $active = this.children(":last");
+        }
+*/
+        var $next = $active.next().length ? $active.next()
+            : this.children(":first");
+                
+        return {"active":$active,"next":$next};
+    };
+    
     $.fn.initFade = function() {
         this.children().hide().fadeOut();
         this.children(":first").addClass('active').show();       
-    }
+    };
 
     $.fn.slideFade = function (fadeSpeed) {
         fadeSpeed = typeof fadeSpeed !== 'undefined' ? fadeSpeed : 'slow';
         var $swap = this.swap();
 
         $swap["active"].fadeOut(fadeSpeed, function () {
-                $swap["active"].hide(function () {
-                    $swap["next"].addClass('active')
-                        .fadeIn(fadeSpeed);
-                });
+            $swap["active"].hide(function () {
+                $swap["next"].addClass('active')
+                    .fadeIn(fadeSpeed);
             });
-                
+        });
     };
 
     /**
@@ -70,7 +125,7 @@
             })
             .show();
         }
-    }
+    };
 
     $.fn.slideFadeInto = function (intervalID, count, fadeSpeed) {
         // if(count == 6) clearInterval(intervalID);
@@ -88,9 +143,7 @@
                 });
             })
 
-
         return count+1;
-                
     };
 
     $.fn.swap = function () {
@@ -101,7 +154,7 @@
             : this.children(":first");
                 
         return {"active":$active,"next":$next};
-    }
+    };
 
     $.fn.nextZ = function(){
         var nextZ = 999;
@@ -111,6 +164,6 @@
                 nextZ = this.find(":nth-child("+count+")").css("z-index");
         }
         return nextZ-1;
-    }
+    };
 
 }) (jQuery);
