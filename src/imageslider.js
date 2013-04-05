@@ -1,7 +1,7 @@
 (function($) {
         
     $(document).ready(function() {
-        $('#colors-slideshow').slideshow('fade-into');
+        $('#slider-content').slideshow('fade-into');
     });
 
     $.fn.slideshow = function(type, duration) {
