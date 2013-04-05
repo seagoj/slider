@@ -11,6 +11,7 @@
 #slider-content *
 {
     position: absolute;
+    display: block;
 }
 /*
 #slider-text
