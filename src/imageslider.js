@@ -38,8 +38,7 @@
         var $swap = this.swap();
         var $container = this;
 
-        $swap["active"].removeClass('active last-active')
-            .fadeOut(fadeSpeed, function() {
+        $swap["active"].fadeOut(fadeSpeed, function() {
                 $swap["active"].hide(function() {
                    $swap["next"].addClass('active');
                    var nextZ = $container.nextZ();
@@ -56,8 +55,7 @@
         fadeSpeed = typeof fadeSpeed !== 'undefined' ? fadeSpeed : 'slow';
         var $swap = this.swap();
 
-        $swap["active"].removeClass('active last-active')
-            .fadeOut(fadeSpeed, function () {
+        $swap["active"].fadeOut(fadeSpeed, function () {
                 $swap["active"].hide(function () {
                     $swap["next"].addClass('active')
                         .fadeIn(fadeSpeed);
