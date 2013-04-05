@@ -8,12 +8,15 @@
 
 #colors-content
 {
+/*
     border-bottom: solid;
     border-color: #EEEEEE;
+    */
     overflow: auto;
-    width: 800px;
+/*    width: 800px;
     margin-top: 5%;
     margin-bottom: 5%;
+*/
 }
 
 #colors-slideshow
