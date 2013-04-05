@@ -29,7 +29,8 @@
                 this["init"+type]();
 
                 var intervalID = setInterval(function() {
-                    count = $container.slideshowFadeInto(intervalID, count);
+/*                    count = $container.slideshowFadeInto(intervalID, count); */
+                    count = $container["slideshow"+type](intervalID, count);
                 }, duration);
                 break;
         };
