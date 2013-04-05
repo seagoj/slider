@@ -26,9 +26,7 @@
                 }, duration);
                 break;
             case 'FadeInto':
-                var func = "init"+type;
-                alert(func);
-                this[func]();
+                this["init"+type]();
 
                 var intervalID = setInterval(function() {
                     count = $container.slideshowFadeInto(intervalID, count);
