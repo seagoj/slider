@@ -1,10 +1,4 @@
 (function($) {
-       /* 
-    $(document).ready(function() {
-        $('#slider-content').slideshow('fade-into');
-    });
-    */
-
     $.fn.slideshow = function(type, duration) {
         type = typeof type !== 'undefined' ? type : 'fade';
         duration = typeof duration !== 'undefined' ? duration : 5000;
@@ -52,19 +46,6 @@
                 
     };
 
-    $.fn.slideshowFade = function (fadeSpeed) {
-        fadeSpeed = typeof fadeSpeed !== 'undefined' ? fadeSpeed : 'slow';
-        var $swap = this.swap();
-
-        $swap["active"].fadeOut(fadeSpeed, function () {
-                $swap["active"].hide(function () {
-                    $swap["next"].addClass('active')
-                        .fadeIn(fadeSpeed);
-                });
-            });
-                
-    };
-
     $.fn.swap = function () {
         var $active = this.children(".active").toggleClass('active');
         if($active.length == 0)
@@ -95,5 +76,18 @@
         }
         return nextZ-1;
     }
+
+    $.fn.slideshowFade = function (fadeSpeed) {
+        fadeSpeed = typeof fadeSpeed !== 'undefined' ? fadeSpeed : 'slow';
+        var $swap = this.swap();
+
+        $swap["active"].fadeOut(fadeSpeed, function () {
+                $swap["active"].hide(function () {
+                    $swap["next"].addClass('active')
+                        .fadeIn(fadeSpeed);
+                });
+            });
+                
+    };
 
 }) (jQuery);
