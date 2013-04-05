@@ -10,12 +10,12 @@
      *                 5000
      */
     $.fn.slideshow = function(type, duration) {
-        type = typeof type !== 'undefined' ? type : 'fade';
+        type = typeof type !== 'undefined' ? type : 'Fade';
         duration = typeof duration !== 'undefined' ? duration : 5000;
 
         var $container = this;
         var count = 0;
-        var validTypes = ['fade','fadeInto'];
+        var validTypes = ['Fade','FadeInto'];
 
         if(validTypes.indexOf(type) !== -1) {
             this["init"+type]();
