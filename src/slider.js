@@ -73,7 +73,7 @@
         return count+1;
     };
 
-    $.fn.swapForver = function () {
+    $.fn.swapForever = function () {
         var $active = this.children(".active").toggleClass('active');
 /*        if($active.length == 0) {
             $active = this.children(":last");
