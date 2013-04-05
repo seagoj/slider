@@ -69,9 +69,6 @@
     $.fn.initializeFadeInto = function(start) {
         start = typeof start !== 'undefined' ? start : 999
 
-
-        /* this.children(":first").addClass('active').show();*/
-
         // Adds #active to first element in 'this'
         this.children(":first").addClass('active');
 
@@ -82,7 +79,7 @@
          */
         for(var i=1; i<=this.children().length; i=i+1) {
             this.find(":nth-child("+i+")")
-            .addClass('child-'+i)
+/*            .addClass('child-'+i) */
             .css({'z-index':start-i})
             .show();
         }
