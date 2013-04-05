@@ -15,7 +15,19 @@
 
         var $container = this;
         var count = 0;
+        var validTypes = ['fade','fadeInto'];
 
+        if(validTypes.indexOf(type) !== -1) {
+            this["init"+type]();
+
+            var intervalID = setInterval(function() {
+                count = $container["slideshow"+type](intervalID, count);
+            }, duration);
+        } else {
+            alert(type+" is not a supported slideshow type.");
+        }
+        
+        /*
         switch(type) {
             case 'fade':
                 this.children().hide().fadeOut();
@@ -29,11 +41,11 @@
                 this["init"+type]();
 
                 var intervalID = setInterval(function() {
-/*                    count = $container.slideshowFadeInto(intervalID, count); */
                     count = $container["slideshow"+type](intervalID, count);
                 }, duration);
                 break;
         };
+        */
     };
         
     $.fn.slideshowFadeInto = function (intervalID, count, fadeSpeed) {
