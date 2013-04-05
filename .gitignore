@@ -1,0 +1,9 @@
+config
+.git
+.vagrant
+cookbooks
+.sass-cache
+*.sublime-project
+*.sublime-workspace
+Thumbs.db
+Desktop.ini
