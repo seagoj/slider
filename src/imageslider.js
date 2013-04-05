@@ -17,6 +17,7 @@
         var count = 0;
         var validTypes = ['Fade','FadeInto'];
 
+        alert(validTypes.indexOf(type));
         if(validTypes.indexOf(type) !== -1) {
             this["init"+type]();
 
