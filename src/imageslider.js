@@ -9,7 +9,7 @@
      * duration    Time in miliseconds that each element is visible; Defaults to
      *                 5000
      */
-    $.fn.slideshow = function(type, duration) {
+    $.fn.slider = function(type, duration) {
         type = typeof type !== 'undefined' ? type : 'Fade';
         duration = typeof duration !== 'undefined' ? duration : 5000;
 
@@ -21,34 +21,14 @@
             this["init"+type]();
 
             var intervalID = setInterval(function() {
-                count = $container["slideshow"+type](intervalID, count);
+                count = $container["slide"+type](intervalID, count);
             }, duration);
         } else {
             alert(type+" is not a supported slideshow type.");
         }
-        
-        /*
-        switch(type) {
-            case 'fade':
-                this.children().hide().fadeOut();
-                this.children(":first").addClass('active').show();
-
-                var intervalID = setInterval(function() {
-                    $container.slideshowFade(intervalID);
-                }, duration);
-                break;
-            case 'FadeInto':
-                this["init"+type]();
-
-                var intervalID = setInterval(function() {
-                    count = $container["slideshow"+type](intervalID, count);
-                }, duration);
-                break;
-        };
-        */
     };
         
-    $.fn.slideshowFadeInto = function (intervalID, count, fadeSpeed) {
+    $.fn.slideFadeInto = function (intervalID, count, fadeSpeed) {
         /* if(count == 6) clearInterval(intervalID); */
         /* if(count !== 0 && count%7 == 0 ) this.reset(); */
 
@@ -77,6 +57,12 @@
             : this.children(":first");
                 
         return {"active":$active,"next":$next};
+    }
+
+
+    $.fn.initFade = function() {
+        this.children().hide().fadeOut();
+        this.children(":first").addClass('active').show();       
     }
 
     /**
@@ -115,7 +101,7 @@
         return nextZ-1;
     }
 
-    $.fn.slideshowFade = function (fadeSpeed) {
+    $.fn.slideFade = function (fadeSpeed) {
         fadeSpeed = typeof fadeSpeed !== 'undefined' ? fadeSpeed : 'slow';
         var $swap = this.swap();
 
