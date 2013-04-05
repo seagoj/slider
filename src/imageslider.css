@@ -1,44 +1,20 @@
 #slider-container
 {
-/*
-    border-bottom: solid;
-    border-color: #EEEEEE;
-    */
     overflow: auto;
-/*    width: 800px;
-    margin-top: 5%;
-    margin-bottom: 5%;
-*/
 }
 
 #slider-content
 {
     float: left;
-/*    margin-bottom: 15px;*/
 }
 
 #slider-content *
 {
     position: absolute;
-/*    margin-top:1%; */
 }
-
+/*
 #slider-text
 {
     margin-left: 310px;
-/*    margin-bottom: 20px;*/
 }
-
-#slider-text h1
-{
-/*    color: black;    
-    font-size: 20pt;
-    margin-top: 30px;*/
-}
-
-#slider-text p
-{
-/*    font-size: 8pt;
-    margin-top: 10px;
-    margin-bottom: 10px;*/
-}
+*/
