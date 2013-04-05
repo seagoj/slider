@@ -1,7 +1,7 @@
 (function($) {
 
     /** 
-     * .slideshow
+     * .slider
      * 
      * Begins the slideshow by choosing the type of slide and duration
      * 
@@ -18,26 +18,17 @@
         var validTypes = ['Fade','FadeInto'];
 
         if(validTypes.indexOf(type) !== -1) {
-            $.getScript(type+".js", function(){
-                this["init"+type]();
-
-                var intervalID = setInterval(function() {
-                    count = $container["slide"+type](intervalID, count);
-                }, duration);
-            });
-/*
             this["init"+type]();
 
             var intervalID = setInterval(function() {
                 count = $container["slide"+type](intervalID, count);
             }, duration);
-*/
         } else {
             alert(type+" is not a supported slideshow type.");
             return false;
         }
     };
-/*        
+
     $.fn.slideFadeInto = function (intervalID, count, fadeSpeed) {
         // if(count == 6) clearInterval(intervalID);
         // if(count !== 0 && count%7 == 0 ) this.reset();
@@ -58,7 +49,7 @@
         return count+1;
                 
     };
-*/
+
     $.fn.swap = function () {
         var $active = this.children(".active").toggleClass('active');
         if($active.length == 0)
@@ -80,7 +71,7 @@
      *
      * start    z-index for top-most element in slideshow; Defaults to 100
      */
-/*    $.fn.initFadeInto = function(start) {
+    $.fn.initFadeInto = function(start) {
         start = typeof start !== 'undefined' ? start : 100
 
         // Adds .active to first element in 'this'
@@ -99,7 +90,7 @@
             .show();
         }
     }
-*/
+
     $.fn.nextZ = function(){
         var nextZ = 999;
         var length = this.children().length;
