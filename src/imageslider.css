@@ -17,7 +17,7 @@
 /*    margin-bottom: 15px;*/
 }
 
-#slider-content img
+#slider-content *
 {
     position: absolute;
 /*    margin-top:1%; */
