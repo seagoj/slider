@@ -12,9 +12,9 @@
     $.fn.slideshow = function(type, duration) {
         type = typeof type !== 'undefined' ? type : 'fade';
         duration = typeof duration !== 'undefined' ? duration : 5000;
+
         var $container = this;
-            
-        var count =0;
+        var count = 0;
 
         switch(type) {
             case 'fade':
@@ -25,8 +25,8 @@
                     $container.slideshowFade(intervalID);
                 }, duration);
                 break;
-            case 'fade-into':
-                this.initFadeInto();
+            case 'FadeInto':
+                this."init"+type+"()";
 
                 var intervalID = setInterval(function() {
                     count = $container.slideshowFadeInto(intervalID, count);
@@ -66,10 +66,15 @@
         return {"active":$active,"next":$next};
     }
 
+    /**
+     * Sets the initial state for the FadeInto slideshow
+     *
+     * start    z-index for top-most element in slideshow; Defaults to 100
+     */
     $.fn.initFadeInto = function(start) {
-        start = typeof start !== 'undefined' ? start : 999
+        start = typeof start !== 'undefined' ? start : 100
 
-        // Adds #active to first element in 'this'
+        // Adds .active to first element in 'this'
         this.children(":first").addClass('active');
 
         /* Iterates through all children of 'this'
