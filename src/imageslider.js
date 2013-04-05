@@ -25,6 +25,7 @@
             }, duration);
         } else {
             alert(type+" is not a supported slideshow type.");
+            return false;
         }
     };
         
