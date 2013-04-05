@@ -1,8 +1,9 @@
 (function($) {
-        
+       /* 
     $(document).ready(function() {
         $('#slider-content').slideshow('fade-into');
     });
+    */
 
     $.fn.slideshow = function(type, duration) {
         type = typeof type !== 'undefined' ? type : 'fade';
