@@ -67,11 +67,13 @@
                 $swap["next"].addClass('active');
                 var $element = $swap["next"];
                
-                for(var count = $container.children().length; count>0; count = count -1) {
+                for(var count=$container.children().length;count>0;count=count-1) {
                     $element.css({'z-index':count}).show();
 
                     $element = $element.next().length ? element.next()
                         : $container.children(":first");
+
+                    alert(count);
                 }
             });
         });
