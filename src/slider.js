@@ -34,9 +34,7 @@
      *
      * start    z-index for top-most element in slideshow; Defaults to 100
      */
-    $.fn.initFadeInto = function(start) {
-        start = typeof start !== 'undefined' ? start : 100
-
+    $.fn.initFadeInto = function() {
         // Adds .active to first element in 'this'
         this.children(":first").addClass('active');
 
