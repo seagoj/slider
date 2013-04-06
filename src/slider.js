@@ -64,9 +64,18 @@
 
         $swap["active"].fadeOut(fadeSpeed, function() {
             $swap["active"].hide(function() {
-               $swap["next"].addClass('active');
-               var nextZ = $container.nextZ();
-               $swap["active"].css({'z-index':nextZ}).show();
+                $swap["next"].addClass('active');
+                var $element = $swap["next"];
+                count = this.children().length;
+                
+                while($element.next() !== $swap["next"]) {
+                    $element.css({'z-index':count}).show();
+
+                    $element = $element.next().length ? element.next()
+                        : this.children(":first");
+
+                    count = count - 1;
+                }
             });
         });
 
@@ -75,10 +84,6 @@
 
     $.fn.swapForever = function () {
         var $active = this.children(".active").toggleClass('active');
-/*        if($active.length == 0) {
-            $active = this.children(":last");
-        }
-*/
         var $next = $active.next().length ? $active.next()
             : this.children(":first");
                 
