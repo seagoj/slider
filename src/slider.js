@@ -67,7 +67,7 @@
                 $swap["next"].addClass('active');
                 var $element = $swap["next"];
                 
-                for(var count = this.children.length; count>0; count = count -1) {
+                for(var count = this.children().length; count>0; count = count -1) {
                     alert(count);
                     $element.css({'z-index':count}).show();
 
