@@ -103,14 +103,4 @@
         return {"active":$active,"next":$next};
     };
 
-    $.fn.nextZ = function(){
-        var nextZ = 999;
-        var length = this.children().length;
-        for(var count=1; count<=length; count = count +1) {
-            if(nextZ>this.find(":nth-child("+count+")").css("z-index"))
-                nextZ = this.find(":nth-child("+count+")").css("z-index");
-        }
-        return nextZ-1;
-    };
-
 }) (jQuery);
