@@ -68,13 +68,11 @@
                 var $element = $swap["next"];
                 count = this.children().length;
                 
-                while($element.next() !== $swap["next"]) {
+                for(var count = this.children.length; count>0; count = count -1) {
                     $element.css({'z-index':count}).show();
 
                     $element = $element.next().length ? element.next()
                         : this.children(":first");
-
-                    count = count - 1;
                 }
             });
         });
