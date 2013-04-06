@@ -6,9 +6,14 @@
     <script src='slider.js'></script>
     <script language='JavaScript'>
         $(document).ready(function() {
-            $('#slider-content').slider('FadeIntoForever');
+            $('#slider-content').slider('FadeInto');
         });
     </script>
+    <style>
+        #slider-content * {
+            display: none;    
+        }
+    </style>
 </head>
 
 
