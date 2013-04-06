@@ -62,17 +62,12 @@
         var $swap = this.swapForever();
         var $container = this;
 
-        alert("called");
-
         $swap["active"].fadeOut(fadeSpeed, function() {
             $swap["active"].hide(function() {
                 $swap["next"].addClass('active');
                 var $element = $swap["next"];
                
-                alert($container.children().length);
-
                 for(var count = $container.children().length; count>0; count = count -1) {
-                    alert(count);
                     $element.css({'z-index':count}).show();
 
                     $element = $element.next().length ? element.next()
