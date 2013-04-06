@@ -60,7 +60,7 @@
         // if(count !== 0 && count%7 == 0 ) this.reset();
 
         fadeSpeed = typeof fadeSpeed !== 'undefined' ? fadeSpeed : 'slow';
-        var $swap = this.swapForever();
+        var $swap = this.swap();
         var $container = this;
 
         $swap["active"].fadeOut(fadeSpeed, function() {
@@ -76,8 +76,6 @@
                 }
             });
         });
-
-        return count+1;
     };
 
     $.fn.swapForever = function () {
