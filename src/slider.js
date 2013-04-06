@@ -62,6 +62,8 @@
         var $swap = this.swapForever();
         var $container = this;
 
+        alert("called");
+
         $swap["active"].fadeOut(fadeSpeed, function() {
             $swap["active"].hide(function() {
                 $swap["next"].addClass('active');
