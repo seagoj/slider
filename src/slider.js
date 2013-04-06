@@ -78,14 +78,6 @@
         });
     };
 
-    $.fn.swapForever = function () {
-        var $active = this.children(".active").toggleClass('active');
-        var $next = $active.next().length ? $active.next()
-            : this.children(":first");
-                
-        return {"active":$active,"next":$next};
-    };
-    
     $.fn.initFade = function() {
         this.children().hide().fadeOut();
         this.children(":first").addClass('active').show();       
@@ -149,8 +141,6 @@
 
     $.fn.swap = function () {
         var $active = this.children(".active").toggleClass('active');
-        if($active.length == 0)
-            $active = this.children(":last");
         var $next = $active.next().length ? $active.next()
             : this.children(":first");
                 
