@@ -69,14 +69,14 @@
                 $swap["next"].addClass('active');
                 var $element = $swap["next"];
                
-                alert(this.children().length);
+                alert($container.children().length);
 
-                for(var count = this.children().length; count>0; count = count -1) {
+                for(var count = $container.children().length; count>0; count = count -1) {
                     alert(count);
                     $element.css({'z-index':count}).show();
 
                     $element = $element.next().length ? element.next()
-                        : this.children(":first");
+                        : $container.children(":first");
                 }
             });
         });
