@@ -44,10 +44,10 @@
         //     sets initiale z-index (start - order in 'this')
         //     sets position: absolute
         //     shows child
-        for(var i=1; i<=this.children().length; i=i+1) {
+        for(var i=this.children().length; i>0; i=i-1) {
             this.find(":nth-child("+i+")")
             .css({
-                'z-index':start-i,
+                'z-index':i,
                 'position':'absolute'
             })
             .show();
