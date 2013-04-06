@@ -6,7 +6,10 @@
     <script src='slider.js'></script>
     <script language='JavaScript'>
         $(document).ready(function() {
-            $('#slider-content').slider('FadeInto');
+            $('#slider-content').slider({
+                'type':'FadeInto',
+                'duration':1000
+            );
         });
     </script>
     <style>

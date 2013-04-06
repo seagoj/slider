@@ -9,9 +9,11 @@
      * duration    Time in miliseconds that each element is visible; Defaults to
      *                 5000
      */
-    $.fn.slider = function(type, duration) {
-        type = typeof type !== 'undefined' ? type : 'Fade';
-        duration = typeof duration !== 'undefined' ? duration : 5000;
+    $.fn.slider = function(options) {
+        var type = typeof options["type"] !== 'undefined' ?
+            options["type"] : 'Fade';
+        var duration = typeof options["duration"] !== 'undefined' ?
+            options["duration"] : 5000;
 
         var $container = this;
         var count = 0;
