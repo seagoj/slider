@@ -18,11 +18,3 @@ var overwrite = function(obj1, obj2) {
 
     return ret;
 };
-
-var test = function() {
-    alert("Called");
-    var defaults = {'type':'Fade','duration':5000};
-    var options = {'type':'FadeInto'};
-
-    alert(overwrite(defaults, options));
-}
