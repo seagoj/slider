@@ -14,12 +14,11 @@
         });
 
         var test = function() {
-            alert("Called");
+            console.log("test Called");
             var defaults = {'type':'Fade','duration':5000};
             var options = {'type':'FadeInto'};
 
             console.log(options);
-
             console.log(overwrite(defaults, options));
         }
     </script>
