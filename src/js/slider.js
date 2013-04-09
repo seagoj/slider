@@ -22,7 +22,8 @@
 //      var duration = typeof options["duration"] !== 'undefined' ?
 //            options["duration"] : 5000;
 
-        var type = options['type'];
+        var type = options.type;
+        var duration = options.duration;
         var $container = this;
         var count = 0;
         var validTypes = ['Fade','FadeInto','Horizontal','Vertical'];
