@@ -17,7 +17,9 @@ var overwrite = function(obj1, obj2) {
     }
 };
 
-var defaults = {'type':'Fade','duration':5000};
-var options = {'type':'FadeInto'};
+var test = function() {
+    var defaults = {'type':'Fade','duration':5000};
+    var options = {'type':'FadeInto'};
 
-alert(overwrite(defaults, options));
+    alert(overwrite(defaults, options));
+}
