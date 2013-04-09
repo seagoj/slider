@@ -17,7 +17,7 @@
 
         var $container = this;
         var count = 0;
-        var validTypes = ['Fade','FadeInto'];
+        var validTypes = ['Fade','FadeInto','Horizontal','Vertical'];
 
         if(validTypes.indexOf(type) !== -1) {
             this["init"+type]();
