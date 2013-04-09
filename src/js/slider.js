@@ -129,12 +129,12 @@
             'fadeSpeed':'slow'  
         };
         options = overwrite(defaults, options);
-        
+       
         var $swap = this.swap();
         console.log($swap);
         $swap['next'].show().addClass('active');
         $swap['active'].slideDown(function(){
-            this.hide();    
+            $swap['active'].hide();    ']
         });
     };
 
