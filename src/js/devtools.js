@@ -18,6 +18,7 @@ var overwrite = function(obj1, obj2) {
 };
 
 var test = function() {
+    alert("Called");
     var defaults = {'type':'Fade','duration':5000};
     var options = {'type':'FadeInto'};
 
