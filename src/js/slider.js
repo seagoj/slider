@@ -27,7 +27,7 @@
         var validTypes = ['Fade','FadeInto','Horizontal','Vertical'];
 
         if(validTypes.indexOf(options['type']) !== -1) {
-            this["init"+options['type]']]'();
+            this["init"+options['type']]();
 
             var intervalID = setInterval(function() {
                 count = $container["slide"+options['type']](intervalID, count);
