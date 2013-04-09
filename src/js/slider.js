@@ -15,7 +15,7 @@
             'duration':5000
         };
 
-//       options = overwrite(defaults, options);
+       options = overwrite(defaults, options);
 
 //        var type = typeof options["type"] !== 'undefined' ?
 //           options["type"] : 'Fade';
@@ -26,14 +26,14 @@
         var count = 0;
         var validTypes = ['Fade','FadeInto','Horizontal','Vertical'];
 
-        if(validTypes.indexOf(type) !== -1) {
-            this["init"+type]();
+        if(validTypes.indexOf(options['type']) !== -1) {
+            this["init"+options['type]']]'();
 
             var intervalID = setInterval(function() {
-                count = $container["slide"+type](intervalID, count);
-            }, duration);
+                count = $container["slide"+options['type']](intervalID, count);
+            }, duration);'
         } else {
-            alert(type+" is not a supported slideshow type.");
+            alert(options['type']+" is not a supported slideshow type.");
             return false;
         }
     };
