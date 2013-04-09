@@ -60,9 +60,16 @@
         }
     };
 
-    $.fn.slideFadeInto = function (intervalID, count, fadeSpeed) {
-        // if(count == 6) clearInterval(intervalID);
-        // if(count !== 0 && count%7 == 0 ) this.reset();
+    $.fn.slideFadeInto = function (intervalID, count, options) {
+        var defaults = {
+            'fadeSpeed':'slow',
+            'stop':null
+        };
+
+        options = overwrite(defaults, options);
+
+        if((options.stop !== null)&&(count == options.stop))
+            clearInterval(intervalID);
 
         fadeSpeed = typeof fadeSpeed !== 'undefined' ? fadeSpeed : 'slow';
         var $swap = this.swap();
