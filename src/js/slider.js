@@ -16,18 +16,13 @@
         };
 
         options = overwrite(defaults, options);
-        console.log(options);
-        console.log(options.type);
-//        var type = typeof options["type"] !== 'undefined' ?
-//           options["type"] : 'Fade';
-//      var duration = typeof options["duration"] !== 'undefined' ?
-//            options["duration"] : 5000;
-
         var type = options.type;
         var duration = options.duration;
         var $container = this;
         var count = 0;
         var validTypes = ['Fade','FadeInto','Horizontal','Vertical'];
+
+        console.log($.fn.slider);
 
         if(validTypes.indexOf(options.type) !== -1) {
             this["init"+options.type]();
