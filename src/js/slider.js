@@ -22,18 +22,19 @@
 //      var duration = typeof options["duration"] !== 'undefined' ?
 //            options["duration"] : 5000;
 
+        var type = options['type'];
         var $container = this;
         var count = 0;
         var validTypes = ['Fade','FadeInto','Horizontal','Vertical'];
 
         if(validTypes.indexOf(options['type']) !== -1) {
-            this["init"+options['type']]();
+            this["init"+type ]();
 
             var intervalID = setInterval(function() {
-                count = $container["slide"+options['type']](intervalID, count);
+                count = $container["slide"+type](intervalID, count);
             }, duration);'
         } else {
-            alert(options['type']+" is not a supported slideshow type.");
+            alert(type+" is not a supported slideshow type.");
             return false;
         }
     };
