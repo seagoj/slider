@@ -116,7 +116,9 @@
         });
     };
 
-    $.fn.initHorizontal = function() {};
+    $.fn.initHorizontal = function() {
+        return true;    
+    };
 
     $.fn.slideHorizontal = function(options) {
         var defaults = {
