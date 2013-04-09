@@ -14,8 +14,8 @@
             'type':'Fade',  
             'duration':5000
         };
-
         options = overwrite(defaults, options);
+    
         var type = options.type;
         var duration = options.duration;
         var $container = this;
@@ -23,6 +23,8 @@
         var validTypes = ['Fade','FadeInto','Horizontal','Vertical'];
 
         console.log(options);
+
+        this.initActive();
 
         if(validTypes.indexOf(options.type) !== -1) {
             this["init"+options.type]();
@@ -36,15 +38,16 @@
         }
     };
 
+    $.fn.initActive = function() {
+        this.children(":first").addClass('active')';)   
+    }
+
     /**
      * Sets the initial state for the FadeInto slideshow
      *
      * start    z-index for top-most element in slideshow; Defaults to 100
      */
     $.fn.initFadeInto = function() {
-        // Adds .active to first element in 'this'
-        this.children(":first").addClass('active');
-
         // Iterates through all children of 'this'
         //     sets initiale z-index (start - order in 'this')
         //     sets position: absolute
@@ -65,17 +68,15 @@
             'fadeSpeed':'slow',
             'stop':null
         };
-
         options = overwrite(defaults, options);
 
         if((options.stop !== null)&&(count == options.stop))
             clearInterval(intervalID);
 
-        fadeSpeed = typeof fadeSpeed !== 'undefined' ? fadeSpeed : 'slow';
         var $swap = this.swap();
         var $container = this;
 
-        $swap["active"].fadeOut(fadeSpeed, function() {
+        $swap["active"].fadeOut(options.fadeSpeed, function() {
             $swap["active"].hide(function() {
                 $swap["next"].addClass('active');
                 var $element = $swap["next"];
@@ -92,11 +93,19 @@
 
     $.fn.initFade = function() {
         this.children().hide().fadeOut();
-        this.children(":first").addClass('active').show();       
+        this.children(".active").show();       
     };
 
-    $.fn.slideFade = function (fadeSpeed) {
-        fadeSpeed = typeof fadeSpeed !== 'undefined' ? fadeSpeed : 'slow';
+    $.fn.slideFade = function (intervalID, count, options) {
+        var defaults = {
+            'fadeSpeed':'slow',
+            'stop':null
+        };
+        options = overwrite(defaults, options);
+
+        if((options.stop !== null)&&(count == options.stop))
+            clearInterval(intervalID);
+
         var $swap = this.swap();
 
         $swap["active"].fadeOut(fadeSpeed, function () {
@@ -107,8 +116,14 @@
         });
     };
 
+    $.fn.initHorizontal = function() {};
+
+    $.fn.slideHorizontal = function() {
+        
+    }}
+
     $.fn.swap = function () {
-        var $active = this.children(".active").toggleClass('active');
+        var $active = this.children(".active").removeClass('active');
         var $next = $active.next().length ? $active.next()
             : this.children(":first");
                 
