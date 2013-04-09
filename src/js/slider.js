@@ -131,7 +131,7 @@
         
         var $swap = this.swap();
         console.log($swap);
-        $swap['active'].hide("slide", {'direction':'left'}, options.fadeSpeed);
+        $swap['active'].slide();
     };
 
     $.fn.swap = function () {
