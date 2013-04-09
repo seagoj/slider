@@ -117,10 +117,12 @@
     };
 
     $.fn.initHorizontal = function() {
+        console.log(this);
         return true;    
     };
 
     $.fn.slideHorizontal = function(options) {
+        console.log(this);
         var defaults = {
             'fadeSpeed':'slow'  
         };
