@@ -32,7 +32,7 @@
 
             var intervalID = setInterval(function() {
                 count = $container["slide"+type](intervalID, count);
-            }, duration);'
+            }, duration);
         } else {
             alert(type+" is not a supported slideshow type.");
             return false;
