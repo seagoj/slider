@@ -10,10 +10,17 @@
      *                 5000
      */
     $.fn.slider = function(options) {
-        var type = typeof options["type"] !== 'undefined' ?
-            options["type"] : 'Fade';
-        var duration = typeof options["duration"] !== 'undefined' ?
-            options["duration"] : 5000;
+        var defaults = {
+            'type':'Fade',  
+            'duration':5000
+        };
+
+       options = overwrite(defaults, options);
+
+//        var type = typeof options["type"] !== 'undefined' ?
+//           options["type"] : 'Fade';
+//      var duration = typeof options["duration"] !== 'undefined' ?
+//            options["duration"] : 5000;
 
         var $container = this;
         var count = 0;

@@ -16,3 +16,8 @@ var overwrite = function(obj1, obj2) {
             obj1[index]=obj2[index];
     }
 };
+
+var defaults = {'type':'Fade','duration':5000};
+var options = {'type':'FadeInto'};
+
+alert(overwrite(defaults, options));
