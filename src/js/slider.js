@@ -132,7 +132,7 @@
         
         var $swap = this.swap();
         console.log($swap);
-        $swap['next'].show().show()addClass('active');
+        $swap['next'].show().addClass('active');
         $swap['active'].slide().hide();
     };
 
