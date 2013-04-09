@@ -15,6 +15,8 @@ var overwrite = function(obj1, obj2) {
         if(obj1[index]!=='undefined')
             obj1[index]=obj2[index];
     }
+
+    return ret;
 };
 
 var test = function() {
