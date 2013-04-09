@@ -117,12 +117,12 @@
     };
 
     $.fn.initHorizontal = function() {
-        console.log(this);
+        console.log('initHorizontal()');
         return true;    
     };
 
     $.fn.slideHorizontal = function(options) {
-        console.log(this);
+        console.log('slideHorizontal');
         var defaults = {
             'fadeSpeed':'slow'  
         };
