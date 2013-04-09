@@ -40,7 +40,7 @@
 
     $.fn.initActive = function() {
         this.children(":first").addClass('active')';)   
-    }
+    };
 
     /**
      * Sets the initial state for the FadeInto slideshow
