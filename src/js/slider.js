@@ -129,7 +129,7 @@
         options = overwrite(defaults, options);
         
         $swap = this.swap();
-        $swap['active'].hide("slide", options.fadeSpeed);
+        $swap['active'].hide("slide", {'direction':'left'}, options.fadeSpeed);
     };
 
     $.fn.swap = function () {
