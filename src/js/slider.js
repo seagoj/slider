@@ -134,7 +134,7 @@
         console.log($swap);
         $swap['next'].show().addClass('active');
         $swap['active'].slideDown(function(){
-            $swap['active'].hide();    ']
+            $swap['active'].hide();
         });
     };
 
