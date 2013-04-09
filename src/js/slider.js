@@ -117,7 +117,8 @@
     };
 
     $.fn.initHorizontal = function() {
-        this.children().show();
+        this.children().hide();
+        this.children(".active").show();
         console.log('.initHorizontal()');
         return true;    
     };
@@ -131,7 +132,8 @@
         
         var $swap = this.swap();
         console.log($swap);
-        $swap['active'].slide();
+        $swap['next'].show();
+        $swap['active'].slide().hide();
     };
 
     $.fn.swap = function () {
