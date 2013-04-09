@@ -12,7 +12,7 @@ var overwrite = function(obj1, obj2) {
     var ret = obj1;
 
     for(index in obj2) {
-        if(obj1[index]!=='undefined']
+        if(obj1[index]!=='undefined')
             obj1[index]=obj2[index];
     }
 };
