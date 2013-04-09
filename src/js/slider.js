@@ -39,7 +39,7 @@
     };
 
     $.fn.initActive = function() {
-        this.children(":first").addClass('active')';)   
+        this.children(":first").addClass('active'); 
     };
 
     /**
