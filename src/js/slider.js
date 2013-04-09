@@ -28,7 +28,7 @@
         var count = 0;
         var validTypes = ['Fade','FadeInto','Horizontal','Vertical'];
 
-        if(validTypes.indexOf(options.type]) !== -1) {
+        if(validTypes.indexOf(options.type) !== -1) {
             this["init"+options.type]();
 
             var intervalID = setInterval(function() {
