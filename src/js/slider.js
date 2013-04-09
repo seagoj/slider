@@ -16,7 +16,7 @@
         };
 
         options = overwrite(defaults, options);
-        console.log(options);
+        console.log('Options:'+options);
 //        var type = typeof options["type"] !== 'undefined' ?
 //           options["type"] : 'Fade';
 //      var duration = typeof options["duration"] !== 'undefined' ?
