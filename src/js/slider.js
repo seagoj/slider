@@ -15,8 +15,8 @@
             'duration':5000
         };
 
-       options = overwrite(defaults, options);
-
+        options = overwrite(defaults, options);
+        console.log(options);
 //        var type = typeof options["type"] !== 'undefined' ?
 //           options["type"] : 'Fade';
 //      var duration = typeof options["duration"] !== 'undefined' ?
