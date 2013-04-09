@@ -133,9 +133,7 @@
         var $swap = this.swap();
         console.log($swap);
         $swap['next'].show().addClass('active');
-        $swap['active'].slide(function(){
-            $swap['active'].hide();
-        });
+        $swap['active'].hide('slide', {direction: 'left'}, 1000);
     };
 
     $.fn.swap = function () {
