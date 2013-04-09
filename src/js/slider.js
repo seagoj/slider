@@ -117,6 +117,7 @@
     };
 
     $.fn.initHorizontal = function() {
+        this.children().show();
         console.log('.initHorizontal()');
         return true;    
     };
