@@ -120,7 +120,7 @@
 
     $.fn.slideHorizontal = function() {
         
-    }}
+    };
 
     $.fn.swap = function () {
         var $active = this.children(".active").removeClass('active');
