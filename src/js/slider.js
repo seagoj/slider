@@ -22,7 +22,7 @@
         var count = 0;
         var validTypes = ['Fade','FadeInto','Horizontal','Vertical'];
 
-        console.log($.fn.slider);
+        console.log(options);
 
         if(validTypes.indexOf(options.type) !== -1) {
             this["init"+options.type]();
