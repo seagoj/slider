@@ -118,8 +118,14 @@
 
     $.fn.initHorizontal = function() {};
 
-    $.fn.slideHorizontal = function() {
+    $.fn.slideHorizontal = function(options) {
+        var defaults = {
+            'fadeSpeed':'slow'  
+        };
+        options = overwrite(defaults, options);
         
+        $swap = this.swap();
+        $swap['active'].hide("slide", options.fadeSpeed);
     };
 
     $.fn.swap = function () {
