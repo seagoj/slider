@@ -17,6 +17,7 @@
 
         options = overwrite(defaults, options);
         console.log(options);
+        console.log(options.type);
 //        var type = typeof options["type"] !== 'undefined' ?
 //           options["type"] : 'Fade';
 //      var duration = typeof options["duration"] !== 'undefined' ?
